@@ -1,0 +1,29 @@
+"""
+have a 2-pointer approach where you check each letter, 
+if ever the letters dont match return false
+
+left = s[0]
+right = s[-1]
+while left < right:
+"""
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        lo = 0
+        hi = len(s)-1
+        while lo < hi:
+            while lo < hi and not s[lo].isalnum():
+                lo+=1
+            while lo < hi and not s[hi].isalnum():
+                hi -=1
+            if s[lo].lower() != s[hi].lower():
+                    return False
+            lo +=1
+            hi -=1
+        return True
+
+
+
+
+
+        
